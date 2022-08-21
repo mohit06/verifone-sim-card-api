@@ -1,4 +1,4 @@
-9# verifone-sim-card-api
+# verifone-sim-card-api
 
 The code in this repository is submitted to Verifone's Hackerrank Challenge. sim-card-api is a REST api that is a basic CRUD application. 
 I have used JPA, H2 Database and Spring Boot.
