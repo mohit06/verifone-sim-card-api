@@ -19,10 +19,10 @@ Below Endpoints are supported
          -     "teleComProvider":"BSNL updated",
          -     "fullName":"Bharat Sanchar Nigam Ltd."
          -  }
-*(/listall) - GET - Fetch all the records 
-*(/:id) - PUT - Update record with specific id.
-              - Complete object with modified values should be resent.
-*(/:id) - DELETE - Delete record with id
+* (/listall) - GET - Fetch all the records 
+* (/:id) - PUT - Update record with specific id.
+               - Complete object with modified values should be resent.
+* (/:id) - DELETE - Delete record with id
 
 
 
