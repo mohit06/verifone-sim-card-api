@@ -3,13 +3,13 @@
 The code in this repository is submitted to Verifone's Hackerrank Challenge. sim-card-api is a REST api that is a basic CRUD application. 
 I have used JPA, H2 Database and Spring Boot.
 As part of challenge, the web service is supposed to be deployed on any server. We choose Heroku and it deployed to below link:
-https://spring-boot-sim-card-api.herokuapp.com
+[sim-card-api]https://spring-boot-sim-card-api.herokuapp.com
 
 Below Endpoints are supported
 * (/) - GET -Return HTTP 200 Status
 * (/add) 
   * POST - Create new SIM record in H2 Database
-  *      - Request Structure
+  *      Request Structure
          {
               "simCardNum":"abcd-1234-jkli-op123",
               "mobileNo":"1234567891",
