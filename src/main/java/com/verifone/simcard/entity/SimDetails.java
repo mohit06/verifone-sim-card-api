@@ -1,11 +1,14 @@
 package com.verifone.simcard.entity;
 
+import java.text.ParseException;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class SimDetails {
@@ -19,6 +22,7 @@ public class SimDetails {
 	
 	private String status;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expiryDate;
 	
 	private String stateOfRegistration;
@@ -63,7 +67,7 @@ public class SimDetails {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(Date expiryDate) {
+	public void setExpiryDate(Date expiryDate) throws ParseException {
 		this.expiryDate = expiryDate;
 	}
 

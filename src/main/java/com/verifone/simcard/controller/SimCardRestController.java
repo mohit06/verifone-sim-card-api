@@ -1,5 +1,9 @@
 package com.verifone.simcard.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +32,15 @@ public class SimCardRestController {
 	}
 	
 	@PostMapping("/add")
-	public ResponseEntity<String> add(@RequestBody SimDetails simdetails){
-		System.out.println(simdetails.toString());
+	public ResponseEntity<String> add(@RequestBody SimDetails simdetails) throws ParseException{
+//		Date date = simdetails.getExpiryDate();
+//		System.out.println(date+" is date received.");
+//		SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");  
+//		Date date1=formatter1.parse(date.toString()); 
+		//System.out.println(date1.toString());
+//		simdetails.setExpiryDate(date1);
+//		System.out.println(simdetails.toString());
+		
 		if(simservice.add(simdetails)) {
 			return new ResponseEntity<>("",HttpStatus.CREATED);
 		}
@@ -43,7 +54,7 @@ public class SimCardRestController {
 	}
 	
 	@PutMapping("/:{id}")
-	public ResponseEntity<String> updateSimDetails(@PathVariable int id, @RequestBody SimDetails sim){
+	public ResponseEntity<String> updateSimDetails(@PathVariable int id, @RequestBody SimDetails sim) throws ParseException{
 		SimDetails simdet = simservice.updateDetails(id,sim);
 		if( simdet != null) {
 			return new ResponseEntity<String>(simdet.toString(), HttpStatus.ACCEPTED);
@@ -60,5 +71,10 @@ public class SimCardRestController {
 		return new ResponseEntity<String>("Record with SimCardId = "+id +" is not found.",
 				HttpStatus.NOT_FOUND);
 		
+	}
+	
+	@GetMapping("/to-renew")
+	public ResponseEntity<ArrayList<SimDetails>> getExpiry() throws ParseException{
+		return new ResponseEntity<ArrayList<SimDetails>>(simservice.getExpirySim(),HttpStatus.OK);
 	}
 }
