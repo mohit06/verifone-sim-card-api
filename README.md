@@ -7,9 +7,10 @@ https://spring-boot-sim-card-api.herokuapp.com
 
 Below Endpoints are supported
 * (/) - GET -Return HTTP 200 Status
-* (/add) - POST -Create new SIM record in H2 Database
-       > - Request Structure
-      >    `{
+* (/add) 
+  * POST - Create new SIM record in H2 Database
+  *      - Request Structure
+         `{
               "simCardNum":"abcd-1234-jkli-op123",
               "mobileNo":"1234567891",
               "status":"Disabled",
@@ -19,10 +20,13 @@ Below Endpoints are supported
               "teleComProvider":"BSNL updated",
               "fullName":"Bharat Sanchar Nigam Ltd."
            }`
-* (/listall) - GET - Fetch all the records 
-* (/:id) - PUT - Update record with specific id.
-            >  - Complete object with modified values should be resent.
-* (/:id) - DELETE - Delete record with id
+* (/listall)
+  * GET - Fetch all the records 
+* (/:id) 
+  * PUT - Update record with specific id.
+  *     - Complete object with modified values should be resent.
+* (/:id)
+  * DELETE - Delete record with id
 
 
 
