@@ -28,7 +28,7 @@ public class SimCardRestController {
 
 	@GetMapping("/")
 	public ResponseEntity<String> home() {
-		return new ResponseEntity<>("",HttpStatus.OK);
+		return new ResponseEntity<>("This is a message to check that the app is running...",HttpStatus.OK);
 	}
 	
 	@PostMapping("/add")
